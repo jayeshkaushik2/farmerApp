@@ -1,0 +1,27 @@
+{% extends 'layout.html' %} {% block title %} Tractors-List {% endblock title %}
+{% block body %}
+
+<div class="container my-3">
+  <h6 class="border-bottom pb-2 mb-0">Farmers list - Tractor info</h6>
+  <div class="container">
+    <div class="my-2 p-2 bg-body rounded shadow-sm">
+      <div class="d-flex text-muted pt-3">
+        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+          {% for farmer in FarmersData %}
+          <div class="justify-content-between">
+            <script></script>
+            <strong name="username" class="text-gray-dark">Username:</strong>
+            <a name="{{farmer.username}}" href="/farmerpage/?username={{farmer.username}}" id="{{farmer.username}}"> {{farmer.username}} </a>
+            <p name="tractorName" id="tractorName" class="d-block">
+              Tractor Name : {{farmer.tractorName}}
+            </p>
+            <hr />
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}

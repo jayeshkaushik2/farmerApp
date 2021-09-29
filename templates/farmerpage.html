@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block title %} Farmerpage | {{username}} {% endblock title %}
+{% block body %}
+
+<div class="container text-center my-4">
+<script>
+    console.log("this is>>{{implement.Harrow}}")
+</script>
+
+    <h3>Username : {{username}}</h3>
+    <p>Tractor's Name: {{tractorName}}</p>
+    <h5>Implementations</h5>
+
+    {% if user.harrow != None %}
+    <p>Harrow</p>
+    {% else %}
+    {% endif %}
+
+    {% if user.cultivator != None %}
+    <p> cultivator </p>
+    {% else %}
+    {% endif %}
+
+    {% if user.rotavator != None %}
+    <p> rotavato </p>
+    {% else %}
+    {% endif %}
+
+    {% if user.plough != None %}
+    <p> plough </p>
+    {% else %}
+    {% endif %}
+
+    {% if user.paddy_trailer != None %}
+    <p> paddy_thrasher </p>
+    {% else %}
+    {% endif %}
+
+    {% if user.dumping_trailer != None %}
+    <p> dumping_trailer </p>
+    {% else %}
+    {% endif %}
+
+    {% if user.wheel_trailer != None %}
+    <p> wheel_trailer </p>
+    {% else %}
+    {% endif %}
+
+</div>
+
+{% endblock body %}

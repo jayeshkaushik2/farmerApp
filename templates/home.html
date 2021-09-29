@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block title %} Home {% endblock title %}
+{% block body %}
+
+<div class="container my-2">
+    <h3 class="text-center">Fill up your from</h3>
+    <div class="container my-1" style="width: 1000px;">
+        <form class="farmersTractor" method="post" action="/">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="username" class="form-label">Enter your name</label>
+                <input type="text" name="username" class="form-control" id="username" aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+                <label for="tractorName" class="form-label">Tractor name</label>
+                <input type="text" name="tractorName" class="form-control" id="tractorName">
+            </div>
+
+            <div class="mb-3">
+                <h3>Check to implementations</h3>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="Harrow" value="True" id="Harrow">
+                    <label class="form-check-label" for="Harrow">
+                        Harrow
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="True" name="Cultivator" id="Cultivator">
+                    <label class="form-check-label" for="Cultivator">
+                        Cultivator
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="True" name="Rotavator" id="Rotavator">
+                    <label class="form-check-label" for="Rotavator">
+                        Rotavator
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="True" name="Plough" id="Plough">
+                    <label class="form-check-label" for="Plough">
+                        Plough
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="True" name="Paddy_Thrasher" id="Paddy_Thrasher">
+                    <label class="form-check-label" for="Paddy_Thrasher">
+                        Paddy Thrasher
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="True" name="Dumping_Trailer" id="Dumping_Trailer">
+                    <label class="form-check-label" for="Dumping_Trailer">
+                        Dumping Trailer
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="True" name="4_wheel_Trailer" id="4_wheel_Trailer">
+                    <label class="form-check-label" for="4_wheel_Trailer">
+                        4 wheel Trailer
+                    </label>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    const CheckBox = () => {
+        let check = document.getElementById('Harrow').innerHTML;
+        console.log(check);
+        if(check.checked === null){
+            document.getElementById('Harrow').innerHTML = 'True'
+        }
+        else{
+            document.getElementById('Harrow').innerHTML = null;
+        }
+
+    }
+</script>
+
+{% endblock body %}
